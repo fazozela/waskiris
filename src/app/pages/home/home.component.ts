@@ -22,7 +22,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
       </div>
       <div class="md:w-1/2">
         <div class="relative rounded-xl overflow-hidden shadow-2xl">
-          <video class="w-full" autoplay loop muted playsinline>
+          <video class="w-full" loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
             <source src="intro_waskiris.mp4" type="video/mp4">
             Tu navegador no soporta este video.
           </video>
