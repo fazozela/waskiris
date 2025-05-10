@@ -1,0 +1,72 @@
+{
+  "shared": {
+    "donate_now": "Dona Ahora"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about_us": "Quiénes Somos",
+    "our_projects": "Nuestros Proyectos",
+    "our_impact": "Nuestro Impacto",
+    "get_involved": "Involúcrate",
+    "contact": "Contacto"
+  },
+  "home": {
+    "home_title": "Empoderando a la próxima generación de líderes STEM en Bolivia",
+    "home_subtitle": "Descubre, aprende y transforma tu futuro. En Chicas Waskiris inspiramos a niñas y adolescentes a explorar el fascinante mundo de la ciencia, tecnología, ingeniería y matemáticas (STEM).",
+    "join_us": "Únete a Chicas Waskiris",
+    "home_about_title": "¡Bienvenidas a Chicas Waskiris!",
+    "home_about_description": "Creemos en el poder de la curiosidad, la innovación y la colaboración para construir una comunidad más inclusiva, creativa y valiente. Aquí, cada niña tiene la oportunidad de desarrollar nuevas habilidades, conectarse con mentores y descubrir su potencial para cambiar el mundo.",
+    "learn_more": "Conoce más sobre nosotros",
+    "home_stem_title": "STEM en tus Manos",
+    "home_stem_description": "Nuestro programa insignia que lleva experiencias prácticas de STEM a niñas en toda Bolivia, rompiendo barreras y creando oportunidades.",
+    "discover_program": "Nuestos proyectos",
+    "home_impact_title": "Nuestro Impacto en Números",
+    "home_stats": {
+      "girls_impacted": "Niñas Impactadas",
+      "workshops": "Talleres",
+      "communities": "Comunidades",
+      "schools": "Escuelas"
+    },
+    "home_testimonials_title": "Lo que Dicen de Nosotros",
+    "home_testimonials": {
+      "quote_1": "Chicas Waskiris cambió la perspectiva de mi hija sobre la ciencia. ¡Ahora sueña con ser ingeniera!",
+      "author_1": "María Fernández",
+      "role_1": "Madre",
+      "quote_2": "Los talleres me ayudaron a descubrir mi pasión por la tecnología. Ahora estudio informática gracias a este programa.",
+      "author_2": "Ana Rodríguez",
+      "role_2": "Participante"
+    },
+    "home_help_title": "Cómo Puedes Ayudar",
+    "home_help_donate": "Dona",
+    "home_help_donate_desc": "Tu contribución nos ayuda a llegar a más niñas y crear más oportunidades en STEM.",
+    "home_help_volunteer": "Voluntariado",
+    "home_help_volunteer_desc": "Comparte tus conocimientos y conviértete en mentor de nuestras participantes.",
+    "home_help_partner": "Alianzas",
+    "home_help_partner_desc": "Empresas y organizaciones pueden apoyar nuestra misión de múltiples formas.",
+    "learn_how": "Aprende cómo",
+    "join_team": "Únete a nuestro equipo",
+    "contact_us": "Contáctanos",
+    "home_news_title": "Noticias y Eventos",
+    "home_news_event": "Próximo Evento",
+    "home_news_event_title": "Feria STEM 2023",
+    "home_news_event_desc": "Únete a nuestra feria STEM anual donde las participantes muestran sus proyectos.",
+    "home_news_blog": "Últimas Noticias",
+    "home_news_blog_title": "Expansión a Nuevas Comunidades",
+    "home_news_blog_desc": "Llevamos nuestros programas a 5 nuevas comunidades este año.",
+    "read_more": "Leer más",
+    "home_partners_title": "Nuestros Socios",
+    "WHY_CHOOSE_US": "¿Por qué elegirnos?",
+    "WHY_CHOOSE_US_SUBTITLE": "Estamos transformando la educación STEM para niñas en Bolivia",
+    "WHY_CHOOSE_1_TITLE": "Programas innovadores",
+    "WHY_CHOOSE_1_DESC": "Experiencias prácticas en STEM que inspiran creatividad y habilidades para resolver problemas.",
+    "WHY_CHOOSE_2_TITLE": "Comunidad de apoyo",
+    "WHY_CHOOSE_2_DESC": "Una red de estudiantes, maestros y familias trabajando juntos para el éxito.",
+    "WHY_CHOOSE_3_TITLE": "Desarrollo integral",
+    "WHY_CHOOSE_3_DESC": "Enfoque en valores, liderazgo y crecimiento personal junto con habilidades técnicas.",
+    "WHY_CHOOSE_4_TITLE": "Proyectos inclusivos",
+    "WHY_CHOOSE_4_DESC": "Programas diseñados para niñas con diferentes habilidades y antecedentes.",
+    "WHY_CHOOSE_VIDEO_CAPTION": "Mira nuestra historia y el impacto que estamos generando",
+    "WHY_CHOOSE_CTA_TITLE": "¡Súmate y sé protagonista de tu propio futuro!",
+    "JOIN_NOW": "Involucrate ahora"
+  }
+}

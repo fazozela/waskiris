@@ -1,0 +1,72 @@
+{
+  "shared": {
+    "donate_now": "Donate Now"
+  },
+  "nav": {
+    "home": "Home",
+    "about_us": "About Us",
+    "our_projects": "Our Projects",
+    "our_impact": "Our Impact",
+    "get_involved": "Get Involved",
+    "contact": "Contact"
+  },
+  "home": {
+    "home_title": "Empowering the next generation of STEM leaders in Bolivia",
+    "home_subtitle": "Discover, learn and transform your future. At Chicas Waskiris we inspire girls and teenagers to explore the fascinating world of science, technology, engineering and mathematics (STEM).",
+    "join_us": "Join Chicas Waskiris",
+    "home_about_title": "Welcome to Chicas Waskiris!",
+    "home_about_description": "We believe in the power of curiosity, innovation and collaboration to build a more inclusive, creative and brave community. Here, every girl has the opportunity to develop new skills, connect with mentors and discover her potential to change the world.",
+    "learn_more": "Learn more about us",
+    "home_stem_title": "STEM in Your Hands",
+    "home_stem_description": "Our flagship program that brings hands-on STEM experiences to girls across Bolivia, breaking barriers and creating opportunities.",
+    "discover_program": "Our projects",
+    "home_impact_title": "Our Impact in Numbers",
+    "home_stats": {
+      "girls_impacted": "Girls Impacted",
+      "workshops": "Workshops",
+      "communities": "Communities",
+      "schools": "Schools"
+    },
+    "home_testimonials_title": "What They Say About Us",
+    "home_testimonials": {
+      "quote_1": "Chicas Waskiris changed my daughter's perspective about science. Now she dreams of being an engineer!",
+      "author_1": "Maria Fernandez",
+      "role_1": "Parent",
+      "quote_2": "The workshops helped me discover my passion for technology. I'm now studying computer science thanks to this program.",
+      "author_2": "Ana Rodriguez",
+      "role_2": "Participant"
+    },
+    "home_help_title": "How You Can Help",
+    "home_help_donate": "Donate",
+    "home_help_donate_desc": "Your contribution helps us reach more girls and create more opportunities in STEM.",
+    "home_help_volunteer": "Volunteer",
+    "home_help_volunteer_desc": "Share your knowledge and become a mentor for our participants.",
+    "home_help_partner": "Partner With Us",
+    "home_help_partner_desc": "Companies and organizations can support our mission in multiple ways.",
+    "learn_how": "Learn how",
+    "join_team": "Join our team",
+    "contact_us": "Contact us",
+    "home_news_title": "News & Events",
+    "home_news_event": "Upcoming Event",
+    "home_news_event_title": "STEM Fair 2023",
+    "home_news_event_desc": "Join us for our annual STEM fair where participants showcase their projects.",
+    "home_news_blog": "Latest News",
+    "home_news_blog_title": "Expanding to New Communities",
+    "home_news_blog_desc": "We're bringing our programs to 5 new communities this year.",
+    "read_more": "Read more",
+    "home_partners_title": "Our Trusted Partners",
+    "WHY_CHOOSE_US": "Why Choose Us?",
+    "WHY_CHOOSE_US_SUBTITLE": "We are transforming STEM education for girls in Bolivia",
+    "WHY_CHOOSE_1_TITLE": "Innovative Programs",
+    "WHY_CHOOSE_1_DESC": "Hands-on STEM experiences that inspire creativity and problem-solving skills.",
+    "WHY_CHOOSE_2_TITLE": "Supportive Community",
+    "WHY_CHOOSE_2_DESC": "A network of students, teachers and families working together for success.",
+    "WHY_CHOOSE_3_TITLE": "Holistic Development",
+    "WHY_CHOOSE_3_DESC": "Focus on values, leadership and personal growth alongside technical skills.",
+    "WHY_CHOOSE_4_TITLE": "Inclusive Projects",
+    "WHY_CHOOSE_4_DESC": "Programs designed for girls with different abilities and backgrounds.",
+    "WHY_CHOOSE_VIDEO_CAPTION": "Watch our story and see the impact we're making",
+    "WHY_CHOOSE_CTA_TITLE": "Join and be the protagonist of your own future!",
+    "JOIN_NOW": "Get involved now"
+  }
+}
