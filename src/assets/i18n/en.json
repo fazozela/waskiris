@@ -5,10 +5,11 @@
   "nav": {
     "home": "Home",
     "about_us": "About Us",
-    "our_projects": "Our Projects",
-    "our_impact": "Our Impact",
-    "get_involved": "Get Involved",
-    "contact": "Contact"
+    "our_projects": "Projects",
+    "get_involved": "Join",
+    "contact": "Contact",
+    "mentorStem": "STEM Mentoring",
+    "impact": "Impact"
   },
   "home": {
     "home_title": "Empowering the next generation of STEM leaders in Bolivia",
@@ -67,6 +68,14 @@
     "WHY_CHOOSE_4_DESC": "Programs designed for girls with different abilities and backgrounds.",
     "WHY_CHOOSE_VIDEO_CAPTION": "Watch our story and see the impact we're making",
     "WHY_CHOOSE_CTA_TITLE": "Join and be the protagonist of your own future!",
-    "JOIN_NOW": "Get involved now"
+    "JOIN_NOW": "Get involved now",
+    "programs": "Programs",
+    "results": "Results",
+    "our_community": "Our community in numbers",
+    "years_working": "Years working",
+    "scholarships": "Scholarships",
+    "perception": "Changed perceptions about STEM areas",
+    "projects": "Proyects",
+    "make_donation": "Make your donation"
   }
 }
