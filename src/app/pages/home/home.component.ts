@@ -19,12 +19,12 @@ import { TranslateModule } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
   <!-- banner -->
-  <section #animatedElement data-animation="fadeInDown" class="relative bg-gradient-to-r from-[#E71F69] to-[#EB5B25] text-white py-20 md:py-32">
+  <section class="relative bg-[#E71F69] text-white py-20 md:py-32">
     <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-10 md:mb-0">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4" translate>home.home_title</h1>
-        <p class="text-xl mb-8" translate>home.home_subtitle</p>
-        <div class="flex flex-col sm:flex-row gap-4">
+        <h1 #animatedElement data-animation="fadeInUp" class="text-4xl md:text-5xl font-bold mb-4" translate>home.home_title</h1>
+        <p #animatedElement data-animation="fadeInUp" class="text-xl mb-8" translate>home.home_subtitle</p>
+        <div #animatedElement data-animation="fadeInDown" class="flex flex-col sm:flex-row gap-4">
           <a routerLink="/our-projects" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" translate>home.programs</a>
           <a routerLink="/our-impact" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" translate>home.results</a>
           <a routerLink="/our-impact" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" >Voluntariado</a>
@@ -32,16 +32,16 @@ import { TranslateModule } from '@ngx-translate/core';
       </div>
       <div class="md:w-1/2">
         <div class="relative rounded-xl overflow-hidden shadow-2xl">
-          <img class="bg-white" src="waskirisLogo.png" alt="logo">
+          <img #animatedElement data-animation="fadeInRight" class="bg-white" src="waskirisLogo.png" alt="logo">
         </div>
       </div>
     </div>
   </section>
 
   <!-- community-stats.component.html -->
-  <section #animatedElement data-animation="fadeInRight" class="w-full bg-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+  <section class="w-full bg-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-[#012633] text-center" translate>home.our_community</h2>
+      <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold text-[#012633] text-center" translate>home.our_community</h2>
 
       <section class="py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
@@ -49,33 +49,33 @@ import { TranslateModule } from '@ngx-translate/core';
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Card 1 -->
             <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(231, 31, 105, 0.9);">
-              <div class="w-20 h-20 rounded-full shadow-lg flex items-center justify-center text-white text-2xl font-bold flex-shrink-0" style="background-color: #E71F69;">
+              <div #animatedElement data-animation="fadeInDown" class="w-20 h-20 rounded-full shadow-lg flex items-center justify-center text-white text-2xl font-bold flex-shrink-0" style="background-color: #E71F69;">
                 +5
               </div>
               <div class="flex-1">
-                <h3 class="text-lg text-white font-semibold leading-relaxed" translate>
+                <h3 #animatedElement data-animation="fadeInUp" class="text-lg text-white font-semibold leading-relaxed" translate>
                   home.years_working
                 </h3>
               </div>
             </div>
             <!-- Card 2 -->
             <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(131, 146, 187, 0.9);">
-              <div class="rounded-full px-6 py-4 shadow-lg flex items-center justify-center text-white text-xl font-bold flex-shrink-0" style="background-color: #8392BB;">
+              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 shadow-lg flex items-center justify-center text-white text-xl font-bold flex-shrink-0" style="background-color: #8392BB;">
                 +500
               </div>
               <div class="flex-1">
-                <h3 class="text-lg text-white font-semibold leading-relaxed" translate>
+                <h3 #animatedElement data-animation="fadeInUp" class="text-lg text-white font-semibold leading-relaxed" translate>
                   home.scholarships
                 </h3>
               </div>
             </div>
             <!-- Card 3 -->
             <div class="rounded-3xl p-8 flex items-center gap-6 md:col-span-2 lg:col-span-1 shadow-lg" style="background-color: rgba(235, 91, 37, 0.9);">
-              <div class="rounded-full px-6 py-4 flex shadow-lg items-center justify-center text-white text-xl font-bold flex-shrink-0" style="background-color: #EB5B25;">
+              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 flex shadow-lg items-center justify-center text-white text-xl font-bold flex-shrink-0" style="background-color: #EB5B25;">
                 +75%
               </div>
               <div class="flex-1">
-                <h3 class="text-lg text-white font-semibold leading-relaxed" translate>
+                <h3 #animatedElement data-animation="fadeInUp" class="text-lg text-white font-semibold leading-relaxed" translate>
                   home.perception
                 </h3>
               </div>
@@ -87,9 +87,9 @@ import { TranslateModule } from '@ngx-translate/core';
   </section>
 
 <!--  Proyectos -->
-  <section #animatedElement data-animation="fadeInLeft" class="py-16 px-4 sm:px-6 lg:px-8" style="background-color: rgba(79, 102, 140, 0.08);">
+  <section class="py-16 px-4 sm:px-6 lg:px-8" style="background-color: rgba(79, 102, 140, 0.08);">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-[#012633] text-center" translate>home.projects</h2>
+      <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold text-[#012633] text-center" translate>home.projects</h2>
 
       <!-- Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-16">
@@ -107,10 +107,10 @@ import { TranslateModule } from '@ngx-translate/core';
               />
             </div>
             <div class="flex-1">
-              <h3 class="text-xl font-bold mb-2" style="color: #E71F69;">
+              <h3 #animatedElement data-animation="fadeInUp" class="text-xl font-bold mb-2" style="color: #E71F69;">
                 {{ card.title }}
               </h3>
-              <p class="text-gray-600 leading-relaxed">
+              <p #animatedElement data-animation="fadeInDown" class="text-gray-600 leading-relaxed">
                 {{ card.description }}
               </p>
             </div>
@@ -181,7 +181,7 @@ import { TranslateModule } from '@ngx-translate/core';
   </section>
 
 <!--  Tesimonials-->
-  <section #animatedElement data-animation="fadeInUp" class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 relative">
+  <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 relative">
     <!-- Background decoration -->
     <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black opacity-50"></div>
     <div class="absolute top-0 left-0 w-full h-full">
@@ -192,11 +192,11 @@ import { TranslateModule } from '@ngx-translate/core';
     <div class="relative max-w-7xl mx-auto">
       <!-- Section header -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4">Testimonios</h2>
+        <h2 #animatedElement data-animation="fadeInUp" class="text-4xl font-bold text-white mb-4">Testimonios</h2>
       </div>
 
       <!-- Carousel container -->
-      <div class="relative">
+      <div #animatedElement data-animation="fadeInUp" class="relative">
         <div class="overflow-hidden">
           <div
             class="flex transition-transform duration-500 ease-in-out"
@@ -285,14 +285,14 @@ import { TranslateModule } from '@ngx-translate/core';
   </section>
 
   <!-- Why Choose Us Section -->
-  <section #animatedElement data-animation="fadeInRight" class="py-16 bg-white relative">
+  <section class="py-16 bg-white relative">
     <div class="container mx-auto px-6 relative z-10">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4" translate>home.WHY_CHOOSE_US</h2>
-      <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto" translate>home.WHY_CHOOSE_US_SUBTITLE</p>
+      <h2 #animatedElement data-animation="fadeInUp" class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4" translate>home.WHY_CHOOSE_US</h2>
+      <p #animatedElement data-animation="fadeInDown" class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto" translate>home.WHY_CHOOSE_US_SUBTITLE</p>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Card 1 -->
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl">
+        <div #animatedElement data-animation="fadeInUp" class="bg-white rounded-xl shadow-lg hover:shadow-xl">
           <div class="h-40 bg-gradient-to-r from-[#E71F69] to-[#EB5B25] flex items-center justify-center">
             <img src="matraz.png" alt="Programas innovadores" class="w-full h-full object-contain opacity-90">
           </div>
@@ -303,7 +303,7 @@ import { TranslateModule } from '@ngx-translate/core';
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl">
+        <div #animatedElement data-animation="fadeInUp" class="bg-white rounded-xl shadow-lg hover:shadow-xl">
           <div class="h-40 bg-gradient-to-r from-[#4F668C] to-[#1A5066] flex items-center justify-center">
             <img src="nina_amarilla_4.png" alt="Comunidad de apoyo" class="w-full h-full object-contain opacity-90">
           </div>
@@ -314,7 +314,7 @@ import { TranslateModule } from '@ngx-translate/core';
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl">
+        <div #animatedElement data-animation="fadeInUp" class="bg-white rounded-xl shadow-lg hover:shadow-xl">
           <div class="h-40 bg-gradient-to-r from-[#E71F69] to-[#EB5B25] flex items-center justify-center">
             <img src="hands.png" alt="Proyectos inclusivos" class="w-full h-full object-contain opacity-90">
           </div>
@@ -325,7 +325,7 @@ import { TranslateModule } from '@ngx-translate/core';
         </div>
 
         <!-- Card 4 -->
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl">
+        <div #animatedElement data-animation="fadeInUp" class="bg-white rounded-xl shadow-lg hover:shadow-xl">
           <div class="h-40 bg-gradient-to-r from-[#4F668C] to-[#1A5066] flex items-center justify-center">
             <img src="nina_rosa_2.png" alt="Enfoque integral" class="w-full h-full object-contain opacity-90">
           </div>
@@ -338,11 +338,11 @@ import { TranslateModule } from '@ngx-translate/core';
 
       <!-- CTA -->
       <div class="text-center mt-12">
-        <h3 class="text-3xl font-bold text-gray-800 mb-6" translate>home.WHY_CHOOSE_CTA_TITLE</h3>
-        <div class="flex justify-center items-center py-2">
+        <h3 #animatedElement data-animation="fadeInDown" class="text-3xl font-bold text-gray-800 mb-6" translate>home.WHY_CHOOSE_CTA_TITLE</h3>
+        <div #animatedElement data-animation="fadeInDown" class="flex justify-center items-center py-2">
           <img src="cohete.png" alt="cohete" class="mx-auto w-xl">
         </div>
-        <a routerLink="/" class="inline-block bg-gradient-to-r bg-pink-500 text-white px-8 py-3 rounded-full font-bold hover:shadow-lg" translate>home.make_donation</a>
+        <a #animatedElement data-animation="fadeInUp" routerLink="/" class="inline-block bg-[#E71F69] text-white px-8 py-3 rounded-full font-bold hover:shadow-lg" translate>home.make_donation</a>
       </div>
     </div>
   </section>
@@ -353,7 +353,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
       <!-- Nuestros aliados -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold text-center mb-8 text-white">
+        <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold text-center mb-8 text-white">
           Nuestros aliados
         </h2>
         <div class="relative overflow-hidden">
@@ -375,7 +375,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
       <!-- Nuestros financiadores -->
       <div>
-        <h2 class="text-3xl font-bold text-center mb-8 text-white">
+        <h2 #animatedElement data-animation="fadeInDown" class="text-3xl font-bold text-center mb-8 text-white">
           Nuestros financiadores
         </h2>
         <div class="relative overflow-hidden">
@@ -398,17 +398,17 @@ import { TranslateModule } from '@ngx-translate/core';
   </section>
 
 <!--  Media-->
-  <section #animatedElement data-animation="fadeInUp" class="py-16 bg-white">
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <!-- Main Title -->
-      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+      <h2 #animatedElement data-animation="fadeInDown" class="text-4xl font-bold text-center mb-12 text-gray-800">
         Media
       </h2>
 
       <!-- Video Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         <!-- Video Card -->
-        <div *ngFor="let video of videos" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+        <div #animatedElement data-animation="fadeInUp" *ngFor="let video of videos" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
 
           <!-- Video Thumbnail or iframe -->
           <div class="relative w-full h-0 pb-[56.25%] bg-gray-100 cursor-pointer"
@@ -478,8 +478,8 @@ import { TranslateModule } from '@ngx-translate/core';
   <section class="bg-gray-900 text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Contáctanos</h2>
-        <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+        <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold mb-4">Contáctanos</h2>
+        <p #animatedElement data-animation="fadeInUp" class="text-gray-300 text-lg max-w-2xl mx-auto">
           Estamos aquí para ayudarte. Ponte en contacto con nosotros a través de cualquiera de nuestros canales.
         </p>
       </div>
@@ -488,8 +488,8 @@ import { TranslateModule } from '@ngx-translate/core';
         <!-- Contact Information -->
         <div class="space-y-8">
           <div>
-            <h3 class="text-xl font-semibold mb-4">Información de Contacto</h3>
-            <div class="flex justify-center">
+            <h3 #animatedElement data-animation="fadeInDown" class="text-xl font-semibold mb-4">Información de Contacto</h3>
+            <div #animatedElement data-animation="fadeInDown" class="flex justify-center">
               <div class="flex items-center space-x-3">
                 <svg class="w-5 h-5 text-blue-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
@@ -503,8 +503,8 @@ import { TranslateModule } from '@ngx-translate/core';
           </div>
 
           <div>
-            <h3 class="text-xl font-semibold mb-4">Síguenos</h3>
-            <div class="flex justify-center space-x-6">
+            <h3 #animatedElement data-animation="fadeInUp" class="text-xl font-semibold mb-4">Síguenos</h3>
+            <div #animatedElement data-animation="fadeInUp" class="flex justify-center space-x-6">
               <!-- Facebook -->
               <a href="https://www.facebook.com/ChicasWaskiris" target="_blank" rel="noopener noreferrer"
                  class="text-gray-400 hover:text-blue-500 transition-colors">
@@ -548,13 +548,13 @@ import { TranslateModule } from '@ngx-translate/core';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <div class="text-center md:text-left">
-          <p class="text-gray-400">&copy; 2025 Chicas Waskiris. Todos los derechos reservados.</p>
+          <p #animatedElement data-animation="fadeInUp" class="text-gray-400">&copy; 2025 Chicas Waskiris. Todos los derechos reservados.</p>
         </div>
         <div class="flex space-x-6 text-sm">
-          <a href="#privacy-policy" class="text-gray-400 hover:text-white transition-colors">
+          <a #animatedElement data-animation="fadeInUp" href="#privacy-policy" class="text-gray-400 hover:text-white transition-colors">
             Política de Privacidad
           </a>
-          <a href="#terms-conditions" class="text-gray-400 hover:text-white transition-colors">
+          <a #animatedElement data-animation="fadeInUp" href="#terms-conditions" class="text-gray-400 hover:text-white transition-colors">
             Términos y Condiciones
           </a>
         </div>
