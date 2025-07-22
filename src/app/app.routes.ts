@@ -18,6 +18,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/our-impact/our-impact.component')
   },
   {
+    path: 'media',
+    loadComponent: () => import('./pages/media/media.component')
+  },
+  {
     path: 'get-involved',
     loadComponent: () => import('./pages/get-involved/get-involved.component')
   },

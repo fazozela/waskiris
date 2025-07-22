@@ -27,14 +27,57 @@ import { TranslateModule } from '@ngx-translate/core';
         <div #animatedElement data-animation="fadeInDown" class="flex flex-col sm:flex-row gap-4">
           <a routerLink="/our-projects" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" translate>home.programs</a>
           <a routerLink="/our-impact" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" translate>home.results</a>
-          <a routerLink="/our-impact" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" >Voluntariado</a>
+          <a routerLink="/get-involved" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" >Voluntariado</a>
         </div>
       </div>
-      <div class="md:w-1/2">
+
+      <div class="md:w-1/2 w-full px-4 md:px-0">
         <div class="relative rounded-xl overflow-hidden shadow-2xl">
-          <img #animatedElement data-animation="fadeInRight" class="bg-white" src="waskirisLogo.png" alt="logo">
+          <!-- Carousel container -->
+          <div class="relative w-full"
+               (touchstart)="onTouchStart($event)"
+               (touchmove)="onTouchMove($event)"
+               (touchend)="onTouchEnd()">
+            <!-- Images container with animation -->
+            <div class="flex transition-transform duration-500 ease-in-out w-full"
+                 [style.transform]="'translateX(-' + (currentImageIndex * 100) + '%)'">
+              <!-- First image -->
+              <div class="w-full flex-shrink-0">
+                <img #animatedElement
+                     data-animation="fadeInRight"
+                     class="bg-white w-full h-[300px] md:h-[400px] object-contain"
+                     src="waskirisLogo.png"
+                     alt="logo">
+              </div>
+              <!-- Second image -->
+              <div class="w-full flex-shrink-0">
+                <img #animatedElement
+                     data-animation="fadeInRight"
+                     class="bg-white w-full h-[300px] md:h-[400px] object-cover"
+                     src="photoGroup.png"
+                     alt="logo">
+              </div>
+            </div>
+
+            <!-- Navigation buttons - now visible on all screens -->
+            <button
+              (click)="previousImage()"
+              class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button
+              (click)="nextImage()"
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -48,8 +91,8 @@ import { TranslateModule } from '@ngx-translate/core';
           <!-- Cards Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Card 1 -->
-            <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(231, 31, 105, 0.9);">
-              <div #animatedElement data-animation="fadeInDown" class="w-20 h-20 rounded-full shadow-lg flex items-center justify-center text-white text-2xl font-bold flex-shrink-0" style="background-color: #E71F69;">
+            <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(231, 31, 105, 1);">
+              <div #animatedElement data-animation="fadeInDown" class="w-20 h-20 rounded-full flex items-center justify-center text-white text-5xl font-bold flex-shrink-0" style="background-color: #E71F69;">
                 +5
               </div>
               <div class="flex-1">
@@ -59,8 +102,8 @@ import { TranslateModule } from '@ngx-translate/core';
               </div>
             </div>
             <!-- Card 2 -->
-            <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(131, 146, 187, 0.9);">
-              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 shadow-lg flex items-center justify-center text-white text-xl font-bold flex-shrink-0" style="background-color: #8392BB;">
+            <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(131, 146, 187, 1);">
+              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 flex items-center justify-center text-white text-5xl font-bold flex-shrink-0" style="background-color: #8392BB;">
                 +500
               </div>
               <div class="flex-1">
@@ -70,8 +113,8 @@ import { TranslateModule } from '@ngx-translate/core';
               </div>
             </div>
             <!-- Card 3 -->
-            <div class="rounded-3xl p-8 flex items-center gap-6 md:col-span-2 lg:col-span-1 shadow-lg" style="background-color: rgba(235, 91, 37, 0.9);">
-              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 flex shadow-lg items-center justify-center text-white text-xl font-bold flex-shrink-0" style="background-color: #EB5B25;">
+            <div class="rounded-3xl p-8 flex items-center gap-6 md:col-span-2 lg:col-span-1 shadow-lg" style="background-color: rgba(235, 91, 37, 1);">
+              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 flex items-center justify-center text-white text-5xl font-bold flex-shrink-0" style="background-color: #EB5B25;">
                 +75%
               </div>
               <div class="flex-1">
@@ -103,7 +146,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <img
                 [src]="card.image"
                 [alt]="card.title"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-contain"
               />
             </div>
             <div class="flex-1">
@@ -161,7 +204,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <img
                 [src]="selectedCard.image"
                 [alt]="selectedCard.title"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-contain"
               />
             </div>
 
@@ -173,6 +216,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <p class="text-gray-700 leading-relaxed">
                 {{ selectedCard.detailedInfo }}
               </p>
+              <a class="pt-6 text-[#E71F69] flex justify-end" routerLink="/our-projects" translate>home.home_see_more</a>
             </div>
           </div>
         </div>
@@ -205,51 +249,49 @@ import { TranslateModule } from '@ngx-translate/core';
             <!-- Testimonial slides -->
             <div
               *ngFor="let testimonial of testimonials; let i = index"
-              class="w-full flex-shrink-0 px-4">
-
-              <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:border-[#1A5066] hover:bg-gray-750 max-w-4xl mx-auto">
-
-                <!-- Quote icon -->
-                <div class="flex justify-center mb-6">
-                  <svg class="w-12 h-12 text-[#1A5066] opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-                  </svg>
-                </div>
-
-                <!-- Testimonial text -->
-                <blockquote class="text-gray-300 text-lg leading-relaxed mb-8 text-center italic">
-                  "{{ testimonial.testimonial }}"
-                </blockquote>
-
-                <!-- Rating stars -->
-                <div class="flex justify-center mb-6">
-                  <div class="flex space-x-1">
-                    <svg
-                      *ngFor="let star of [1,2,3,4,5]"
-                      class="w-5 h-5"
-                      [class.text-yellow-400]="star <= testimonial.rating"
-                      [class.text-gray-600]="star > testimonial.rating"
-                      fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- Client info -->
-                <div class="flex items-center justify-center space-x-4">
+              class="w-full flex-shrink-0 px-4"
+            >
+              <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:border-[#1A5066] hover:bg-gray-750 max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+                <!-- Client info left -->
+                <div class="flex flex-col items-center md:items-start w-full md:w-1/3">
                   <img
                     [src]="testimonial.avatar"
                     [alt]="testimonial.name"
-                    class="w-16 h-16 rounded-full object-cover border-2 border-[#1A5066]">
-                  <div class="text-center">
-                    <h4 class="text-white font-semibold text-lg">{{ testimonial.name }}</h4>
-                    <p class="text-[#1A5066] font-medium">{{ testimonial.role }}</p>
-                    <p class="text-gray-400 text-sm">{{ testimonial.company }}</p>
+                    class="w-32 h-32 rounded-full object-cover border-4 border-[#1A5066] mb-4"
+                  />
+                  <div class="text-center md:text-left">
+                    <h4 class="text-white font-semibold text-2xl">{{ testimonial.name }}</h4>
+                    <p class="text-[#1A5066] font-medium text-lg">{{ testimonial.role }}</p>
+                    <p class="text-gray-400 text-base">{{ testimonial.company }}</p>
+                  </div>
+                </div>
+                <!-- Testimonial right -->
+                <div class="flex-1 flex flex-col justify-center items-center md:items-start">
+                  <!-- Quote icon -->
+                  <div class="flex justify-center md:justify-start mb-4">
+                    <svg class="w-12 h-12 text-[#E71F69] opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                  </div>
+                  <!-- Testimonial text -->
+                  <blockquote class="text-gray-300 text-lg leading-relaxed mb-6 text-center md:text-left italic">
+                    "{{ testimonial.testimonial }}"
+                  </blockquote>
+                  <!-- Lab matraces (flasks) instead of stars -->
+                  <div class="flex justify-center md:justify-start mb-2">
+                    <ng-container *ngFor="let flask of [1,2,3,4,5]">
+                      <img
+                        src="matraz.png"
+                        alt="matraz"
+                        class="w-8 h-8 mx-1 inline"
+                        [ngClass]="flask <= testimonial.rating ? 'opacity-100' : 'opacity-30 grayscale'"
+                      />
+                    </ng-container>
                   </div>
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
 
@@ -294,7 +336,7 @@ import { TranslateModule } from '@ngx-translate/core';
         <!-- Card 1 -->
         <div #animatedElement data-animation="fadeInUp" class="bg-white rounded-xl shadow-lg hover:shadow-xl">
           <div class="h-40 bg-gradient-to-r from-[#E71F69] to-[#EB5B25] flex items-center justify-center">
-            <img src="matraz.png" alt="Programas innovadores" class="w-full h-full object-contain opacity-90">
+            <img src="cohet.png" alt="Programas innovadores" class="w-full h-full object-contain opacity-90">
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold text-gray-800 mb-3" translate>home.WHY_CHOOSE_1_TITLE</h3>
@@ -339,10 +381,10 @@ import { TranslateModule } from '@ngx-translate/core';
       <!-- CTA -->
       <div class="text-center mt-12">
         <h3 #animatedElement data-animation="fadeInDown" class="text-3xl font-bold text-gray-800 mb-6" translate>home.WHY_CHOOSE_CTA_TITLE</h3>
-        <div #animatedElement data-animation="fadeInDown" class="flex justify-center items-center py-2">
-          <img src="cohete.png" alt="cohete" class="mx-auto w-xl">
+        <div #animatedElement data-animation="fadeInDown" class="flex justify-center items-center py-4">
+          <img src="hashtag.png" alt="cohete" class="mx-auto w-xl">
         </div>
-        <a #animatedElement data-animation="fadeInUp" routerLink="/" class="inline-block bg-[#E71F69] text-white px-8 py-3 rounded-full font-bold hover:shadow-lg" translate>home.make_donation</a>
+        <a #animatedElement data-animation="fadeInUp" routerLink="/" class="inline-block bg-[#E71F69] text-white px-8 py-5 mt-6 rounded-full font-bold hover:shadow-lg" translate>home.make_donation</a>
       </div>
     </div>
   </section>
@@ -359,13 +401,13 @@ import { TranslateModule } from '@ngx-translate/core';
         <div class="relative overflow-hidden">
           <div class="flex animate-scroll-left">
             <div class="flex space-x-8 min-w-full">
-              <div *ngFor="let ally of allies" class="flex-shrink-0 w-32 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
+              <div *ngFor="let ally of allies" class="flex-shrink-0 w-30 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
                 <img [src]="ally.logo" [alt]="ally.name" class="max-w-full max-h-full object-contain p-2">
               </div>
             </div>
             <!-- Duplicate for seamless loop -->
-            <div class="flex space-x-8 min-w-full">
-              <div *ngFor="let ally of allies" class="flex-shrink-0 w-32 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
+            <div class="flex space-x-8 min-w-full ml-4">
+              <div *ngFor="let ally of allies" class="flex-shrink-0 w-30 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
                 <img [src]="ally.logo" [alt]="ally.name" class="max-w-full max-h-full object-contain p-2">
               </div>
             </div>
@@ -405,71 +447,12 @@ import { TranslateModule } from '@ngx-translate/core';
         Media
       </h2>
 
-      <!-- Video Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
-        <!-- Video Card -->
-        <div #animatedElement data-animation="fadeInUp" *ngFor="let video of videos" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+      <div class="flex justify-center">
+        <img #animatedElement data-animation="fadeInDown" class="w-120" src="astronauta.png" alt="astronauta">
+      </div>
 
-          <!-- Video Thumbnail or iframe -->
-          <div class="relative w-full h-0 pb-[56.25%] bg-gray-100 cursor-pointer"
-               (click)="playVideo(video)"
-               [class.pointer-events-none]="video.isPlaying">
-
-            <!-- Thumbnail View -->
-            <div *ngIf="!video.isPlaying" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-30 transition-all duration-300">
-              <img
-                [src]="video.thumbnail"
-                [alt]="video.title"
-                class="absolute inset-0 w-full h-full object-cover"
-                loading="lazy">
-
-              <!-- Play Button Overlay -->
-              <div class="relative z-10 flex items-center justify-center w-16 h-16 bg-red-600 rounded-full hover:bg-red-700 transition-colors duration-200 hover:scale-110 transform">
-                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.841z"/>
-                </svg>
-              </div>
-            </div>
-
-            <!-- iframe View (only loads when clicked) -->
-            <iframe
-              *ngIf="video.isPlaying"
-              [src]="video.embedUrl"
-              [title]="video.title"
-              class="absolute top-0 left-0 w-full h-full rounded-t-lg"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              autoplay>
-            </iframe>
-          </div>
-
-          <!-- Card Content Below Video -->
-          <div class="p-4 bg-white">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
-              {{ video.title }}
-            </h3>
-            <p class="text-sm text-gray-600 mb-3 line-clamp-3">
-              {{ video.description }}
-            </p>
-            <div class="flex items-center justify-between">
-                <span class="text-xs text-gray-500 font-medium">
-                  {{ video.duration }}
-                </span>
-              <a
-                [href]="video.originalUrl"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center px-3 py-1 bg-red-600 text-white text-xs font-medium rounded-full hover:bg-red-700 transition-colors duration-200">
-                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                  <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                </svg>
-                Ver en YouTube
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="flex justify-center">
+        <a #animatedElement data-animation="fadeInUp" routerLink="/media" class="inline-block bg-[#E71F69] text-white px-8 py-5 mt-6 rounded-full font-bold hover:shadow-lg">Ir a Media</a>
       </div>
     </div>
   </section>
@@ -507,8 +490,8 @@ import { TranslateModule } from '@ngx-translate/core';
             <div #animatedElement data-animation="fadeInUp" class="flex justify-center space-x-6">
               <!-- Facebook -->
               <a href="https://www.facebook.com/ChicasWaskiris" target="_blank" rel="noopener noreferrer"
-                 class="text-gray-400 hover:text-blue-500 transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                 class="text-gray-400 hover:text-pink-500 transition-colors">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
@@ -516,15 +499,15 @@ import { TranslateModule } from '@ngx-translate/core';
               <!-- Instagram -->
               <a href="https://www.instagram.com/chicaswaskiris/" target="_blank" rel="noopener noreferrer"
                  class="text-gray-400 hover:text-pink-500 transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-2.508 0-4.541-2.033-4.541-4.541s2.033-4.541 4.541-4.541 4.541 2.033 4.541 4.541-2.033 4.541-4.541 4.541zm7.519 0c-2.508 0-4.541-2.033-4.541-4.541s2.033-4.541 4.541-4.541 4.541 2.033 4.541 4.541-2.033 4.541-4.541 4.541z"/>
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                 </svg>
               </a>
 
               <!-- TikTok -->
               <a href="https://www.tiktok.com/@chicas_waskiris" target="_blank" rel="noopener noreferrer"
                  class="text-gray-400 hover:text-red-500 transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
                 </svg>
               </a>
@@ -532,7 +515,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <!-- YouTube -->
               <a href="https://www.youtube.com/@chicaswaskiris2737" target="_blank" rel="noopener noreferrer"
                  class="text-gray-400 hover:text-red-600 transition-colors">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
               </a>
@@ -551,58 +534,144 @@ import { TranslateModule } from '@ngx-translate/core';
           <p #animatedElement data-animation="fadeInUp" class="text-gray-400">&copy; 2025 Chicas Waskiris. Todos los derechos reservados.</p>
         </div>
         <div class="flex space-x-6 text-sm">
-          <a #animatedElement data-animation="fadeInUp" href="#privacy-policy" class="text-gray-400 hover:text-white transition-colors">
-            Política de Privacidad
-          </a>
-          <a #animatedElement data-animation="fadeInUp" href="#terms-conditions" class="text-gray-400 hover:text-white transition-colors">
-            Términos y Condiciones
+          <a #animatedElement data-animation="fadeInUp" href="#" (click)="openLegalModal($event)" class="text-gray-400 hover:text-white transition-colors">
+            Política de Privacidad & Términos y Condiciones
           </a>
         </div>
       </div>
     </div>
+
+    <div
+      *ngIf="showLegalModal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+      (click)="closeLegalModal()"
+    >
+      <div
+        class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative"
+        (click)="$event.stopPropagation()"
+      >
+        <button
+          (click)="closeLegalModal()"
+          class="absolute top-4 right-4 text-gray-500 hover:text-[#E71F69] text-2xl font-bold"
+          aria-label="Cerrar"
+        >&times;</button>
+        <h2 class="text-2xl font-bold mb-4 text-[#E71F69]">TÉRMINOS DE USO</h2>
+        <p class="text-xs text-gray-500 mb-2">Última actualización: 30 de julio de 2025</p>
+        <p class="mb-4 text-gray-500">Bienvenido/a a la página web de Chicas Waskiris (“la Web”, “nosotros”, “nuestro/a”). Al acceder o utilizar este sitio web, acepta cumplir los siguientes términos de uso. Si no está de acuerdo con estos términos, por favor, no utilice este sitio.</p>
+        <ol class="list-decimal pl-5 mb-4 space-y-2 text-sm text-gray-500">
+          <li>
+            <strong>Contenido y titularidad</strong><br>
+            El contenido de este sitio web, incluyendo pero no limitado a fotos, videos, texto, manuales, guías y demás material, es propiedad de Chicas Waskiris o se utiliza bajo autorización expresa conforme a la normativa vigente.<br>
+            El sitio puede mostrar imágenes o videos de menores de edad exclusivamente con los debidos permisos gestionados por Chicas Waskiris. No está permitido descargar, distribuir, compartir fuera de la web, reproducir o modificar este material sin consentimiento expreso por escrito de Chicas Waskiris.
+          </li>
+          <li>
+            <strong>Uso del material de autoría de Chicas Waskiris</strong><br>
+            Se permite la descarga gratuita de manuales, guías y otros recursos digitales del sitio, siempre y cuando:<br>
+            En toda reutilización, publicación, diseminación, adaptación o referencia pública se cite de manera adecuada la autoría de Chicas Waskiris y se reconozca la propiedad intelectual mediante mención visible a “Chicas Waskiris, Bolivia” y el enlace al sitio web.<br>
+            No se realiza ningún uso comercial, salvo acuerdo escrito con Chicas Waskiris.<br>
+            No se modifica el contenido original de modo que distorsione su significado o propósito.
+          </li>
+          <li>
+            <strong>Uso indebido</strong><br>
+            No podrá usar este sitio web para fines ilícitos, fraudulentos, difamatorios, abusivos, obscenos o dañinos, ni interferir en su correcto funcionamiento.
+          </li>
+          <li>
+            <strong>Protección de los derechos de menores</strong><br>
+            Queda estrictamente prohibido descargar, compartir, reproducir o redistribuir imágenes o videos de menores de edad publicados en este sitio para cualquiera de los fines no autorizados por Chicas Waskiris. Toda fotografía y video dentro de la Web cuenta con los permisos pertinentes; cualquier uso por terceros está estrictamente prohibido.
+          </li>
+          <li>
+            <strong>Modificaciones y disponibilidad</strong><br>
+            Chicas Waskiris se reserva el derecho de modificar estos términos en cualquier momento y sin previo aviso. El uso continuado de la Web implica la aceptación de los términos modificados.
+          </li>
+        </ol>
+        <h2 class="text-2xl font-bold mb-4 text-[#E71F69] mt-8">POLÍTICA DE PRIVACIDAD</h2>
+        <p class="text-xs text-gray-500 mb-2">Última actualización: 30 de julio de 2025</p>
+        <ol class="list-decimal pl-5 mb-4 space-y-2 text-sm text-gray-500">
+          <li>
+            <strong>No utilizamos cookies</strong><br>
+            Nuestra web NO utiliza cookies para rastrear, almacenar información personal ni ningún otro propósito.
+          </li>
+          <li>
+            <strong>Información recopilada</strong><br>
+            No recopilamos información personal de los visitantes de la Web de manera automática.<br>
+            Solo recibimos información personal si usted nos la proporciona voluntariamente a través de formularios de contacto, correo electrónico u otro medio similar.<br>
+            En ese caso, la información proporcionada se utilizará únicamente para responder consultas directas y no será compartida con terceros sin su consentimiento previo, salvo requerimiento legal.
+          </li>
+          <li>
+            <strong>Protección de menores</strong><br>
+            El sitio publica imágenes y videos de menores con los permisos y autorizaciones legales requeridos. No se recopila información personal de menores visitantes ni se solicita ningún tipo de registro.
+          </li>
+          <li>
+            <strong>Enlaces a terceros</strong><br>
+            Esta web puede contener enlaces a sitios web de terceros. No nos responsabilizamos de las prácticas de privacidad ni del contenido de dichas webs externas.
+          </li>
+          <li>
+            <strong>Derechos de Propiedad Intelectual</strong><br>
+            Todo material original ofrecido para descarga (manuales, guías y otros recursos) es propiedad intelectual de Chicas Waskiris.<br>
+            Su reutilización debe siempre reconocer la autoría de Chicas Waskiris y no está permitida para fines comerciales salvo autorización expresa.
+          </li>
+          <li>
+            <strong>Cambios a la política</strong><br>
+            Chicas Waskiris puede modificar esta política de privacidad cuando lo considere necesario. Cualquier cambio será publicado en esta página.
+          </li>
+          <li>
+            <strong>Contacto</strong><br>
+            Para cualquier consulta respecto a estos Términos de uso o la Política de privacidad puede escribirnos a: <a href="mailto:chicaswaskiris@gmail.com" class="text-[#E71F69] underline">chicaswaskiris&#64;gmail.com</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+
   </footer>
   `
 })
 
-export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
+export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChildren('animatedElement') animatedElements!: QueryList<ElementRef>;
 
   selectedCard: Card | null = null;
   currentIndex = 0;
   autoSlideInterval: any;
+  currentImageIndex = 0;
+  touchStartX = 0;
+  touchEndX = 0;
+  showLegalModal = false;
 
   cardsData: Card[] = [
     {
       id: 1,
-      title: "Robótica",
-      description: "Robótica educativa para mentes jóvenes",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&h=200&fit=crop",
-      detailedInfo: "Nuestro programa de robótica educativa está diseñado específicamente para inspirar y educar a las mentes jóvenes en el fascinante mundo de la tecnología. A través de actividades prácticas y proyectos innovadores, los estudiantes aprenden conceptos fundamentales de programación, ingeniería y pensamiento computacional mientras construyen y programan sus propios robots.",
-      features: ["Programación visual", "Construcción de robots", "Trabajo en equipo", "Resolución de problemas"]
+      title: "STEM EN TUS MANOS",
+      description: "Promover la inclusión de adolescentes sordos en la educación STEM.",
+      image: "stem.png",
+      detailedInfo: "Promover la inclusión de adolescentes sordos en la educación STEM, adaptando materiales educativos y talleres a la Lengua de Señas Boliviana (LSB) y generando experiencias accesibles y transformadoras."
     },
     {
       id: 2,
-      title: "Apps",
-      description: "Desarrollo de apps con impacto social",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=200&fit=crop",
-      detailedInfo: "Nuestro programa de desarrollo de aplicaciones se enfoca en crear soluciones tecnológicas que generen un impacto positivo en la sociedad. Los participantes aprenden a diseñar, desarrollar y lanzar aplicaciones móviles que aborden problemas reales de sus comunidades, combinando habilidades técnicas con conciencia social.",
-      features: ["Desarrollo móvil", "Diseño UX/UI", "Impacto social", "Metodologías ágiles"]
+      title: "IMPULSA STEM",
+      description: "Motivar a adolescentes de municipios y/o ciudades alejadas de la ciudad de La Paz.",
+      image: "cohete.png",
+      detailedInfo: "Motivar a adolescentes de municipios y/o ciudades alejadas de la ciudad de La Paz a optar por carreras STEM, reduciendo la brecha de género y generando oportunidades desde sus propias comunidades."
     },
     {
       id: 3,
-      title: "IA",
-      description: "Exploración de la inteligencia artificial",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=300&h=200&fit=crop",
-      detailedInfo: "Sumérgete en el mundo de la inteligencia artificial y descubre cómo esta tecnología está transformando nuestra sociedad. Nuestro programa cubre desde conceptos básicos hasta aplicaciones avanzadas, incluyendo machine learning, procesamiento de lenguaje natural y visión por computadora, todo explicado de manera accesible y práctica.",
-      features: ["Machine Learning", "Procesamiento de lenguaje", "Visión artificial", "Ética en IA"]
+      title: "Juntucha waskiri",
+      description: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial.",
+      image: "juntucha1.png",
+      detailedInfo: "Sumérgete en el mundo de la inteligencia artificial y descubre cómo esta tecnología está transformando nuestra sociedad. Nuestro programa cubre desde conceptos básicos hasta aplicaciones avanzadas, incluyendo machine learning, procesamiento de lenguaje natural y visión por computadora, todo explicado de manera accesible y práctica."
     },
     {
       id: 4,
-      title: "Ciencia",
-      description: "Proyectos de ciencia con mentoría",
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=300&h=200&fit=crop",
-      detailedInfo: "Nuestro programa de ciencia conecta a estudiantes apasionados con mentores expertos para desarrollar proyectos de investigación innovadores. Los participantes exploran diversas áreas científicas, desde biología y química hasta física y ciencias ambientales, mientras aprenden metodología científica y desarrollan habilidades de investigación.",
-      features: ["Investigación científica", "Mentoría personalizada", "Metodología científica", "Presentación de resultados"]
+      title: "Juntucha Waskiri 2.0",
+      description: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial.",
+      image: "juntucha2.png",
+      detailedInfo: "Sumérgete en el mundo de la inteligencia artificial y descubre cómo esta tecnología está transformando nuestra sociedad. Nuestro programa cubre desde conceptos básicos hasta aplicaciones avanzadas, incluyendo machine learning, procesamiento de lenguaje natural y visión por computadora, todo explicado de manera accesible y práctica."
+    },
+    {
+      id: 5,
+      title: "Primer Campamento STEM de Chicas Waskiris",
+      description: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial.",
+      image: "primer-campamento.jpeg",
+      detailedInfo: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial en ciencia, tecnología, ingeniería y matemáticas."
     }
   ];
 
@@ -656,87 +725,55 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
 
   allies = [
     {
-      name: 'Tech Corp',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiM0RjQ2RTUiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRFQ0ggQ09SUDwvdGV4dD48L3N2Zz4='
+      name: 'OWSD Bolivia',
+      logo: 'allies/owsd-bolivia.png'
     },
     {
-      name: 'Global Solutions',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiM3QzNBRUQiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdMT0JBTCBTT0w8L3RleHQ+PC9zdmc+'
+      name: 'Juntucha Waskiri 1',
+      logo: 'allies/juntuchawaskiri1.png'
     },
     {
-      name: 'Innovation Hub',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwNTk2NjkiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPklOTk9WIEhVQjwvdGV4dD48L3N2Zz4='
+      name: 'STEAM Stars',
+      logo: 'allies/waskiris-2019.jpeg'
     },
     {
-      name: 'Digital Partners',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNEQzI2MjYiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRJR0lUQUwgUDwvdGV4dD48L3N2Zz4='
+      name: 'Nos Gusta la Ciencia',
+      logo: 'allies/nos-gusta-la-ciencia.jpeg'
     },
     {
-      name: 'Future Labs',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNFQTU4MEMiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZVVFVSRSBMQUI8L3RleHQ+PC9zdmc+'
+      name: 'Project Suma',
+      logo: 'allies/projectsuma.jpeg'
     },
     {
-      name: 'Smart Systems',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwMjg0QzciLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNNQVJUIFNZUzwvdGV4dD48L3N2Zz4='
+      name: 'Rotaract',
+      logo: 'allies/rotarac-la-paz.png'
     },
     {
-      name: 'Next Gen',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNCRTE4NUQiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk5FWFQgR0VOPC90ZXh0Pjwvc3ZnPg=='
+      name: 'Ampuy',
+      logo: 'allies/ampuy.png'
     },
     {
-      name: 'Advanced Tech',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwRjc2NkUiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFEViBURUNIPC90ZXh0Pjwvc3ZnPg=='
-    },
-    {
-      name: 'Pro Solutions',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiM5MzMzRUEiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBSTyBTT0w8L3RleHQ+PC9zdmc+'
-    },
-    {
-      name: 'Elite Partners',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNDMjQxMEMiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkVMSVRFIFBBUjwvdGV4dD48L3N2Zz4='
+      name: 'FIAB',
+      logo: 'allies/fiab.jpeg'
     }
   ];
 
   funders = [
     {
-      name: 'Capital Ventures',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMxRTQwQUYiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNBUElUQUwgVjwvdGV4dD48L3N2Zz4='
+      name: 'Chevening',
+      logo: 'allies/chevening.jpeg'
     },
     {
-      name: 'Investment Group',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNCOTFDMUMiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPklOVkVTVCBHPC90ZXh0Pjwvc3ZnPg=='
+      name: 'Giz',
+      logo: 'allies/giz.jpg'
     },
     {
-      name: 'Finance Partners',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMxNjY1MzQiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZJTkFOQ0UgUDwvdGV4dD48L3N2Zz4='
+      name: 'FREE FUND STEM',
+      logo: 'allies/free.jpeg'
     },
     {
-      name: 'Growth Capital',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiM5MjQwMEUiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdST1dUSCBDPC90ZXh0Pjwvc3ZnPg=='
-    },
-    {
-      name: 'Strategic Fund',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiM3RTIyQ0UiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNUUkFUIEZVTkQ8L3RleHQ+PC9zdmc+'
-    },
-    {
-      name: 'Angel Investors',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNCRTEyM0MiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFOR0VMIElOVjwvdGV4dD48L3N2Zz4='
-    },
-    {
-      name: 'Venture Capital',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwRTc0OTAiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlZFTlRVUkUgQzwvdGV4dD48L3N2Zz4='
-    },
-    {
-      name: 'Private Equity',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNBMjFDQUYiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBSSVZBVEUgRTwvdGV4dD48L3N2Zz4='
-    },
-    {
-      name: 'Funding Corp',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwNTkyMTIiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZVTkRJTkcgQzwvdGV4dD48L3N2Zz4='
-    },
-    {
-      name: 'Investment Bank',
-      logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNEQzI2MjYiLz48dGV4dCB4PSI2MCIgeT0iMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPklOVkVTVCBCPC90ZXh0Pjwvc3ZnPg=='
+      name: 'Women WIN',
+      logo: 'allies/woman-win.png'
     }
   ];
 
@@ -797,6 +834,14 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
     this.autoSlideInterval = setInterval(() => {
       this.nextSlide();
     }, 5000); // Change slide every 5 seconds
+
+    this.autoSlideInterval = setInterval(() => {
+      this.nextImage();
+    }, 5000);
+  }
+
+  nextImage() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % 2;
   }
 
   nextSlide() {
@@ -824,19 +869,25 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
     this.selectedCard = null;
   }
 
-  onEnroll(card: Card): void {
-    console.log('Enrolling in:', card.title);
-    // Add your enrollment logic here
-  }
-
-  onMoreInfo(card: Card): void {
-    console.log('More info for:', card.title);
-    // Add your more info logic here
-  }
-
   playVideo(video: any) {
     // Only load iframe when user clicks to play
     video.isPlaying = true;
+  }
+
+  previousImage() {
+    this.currentImageIndex = this.currentImageIndex === 0 ? 1 : 0;
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+      this.startAutoSlide();
+    }
+  }
+
+  goToImage(index: number) {
+    this.currentImageIndex = index;
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+      this.startAutoSlide();
+    }
   }
 
   private setupScrollAnimations() {
@@ -858,6 +909,43 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
       observer.observe(el.nativeElement);
     });
   }
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  onTouchMove(event: TouchEvent) {
+    this.touchEndX = event.touches[0].clientX;
+  }
+
+  onTouchEnd() {
+    const swipeThreshold = 50; // minimum distance for swipe
+    const difference = this.touchStartX - this.touchEndX;
+
+    if (Math.abs(difference) > swipeThreshold) {
+      if (difference > 0) {
+        // Swipe left
+        this.nextImage();
+      } else {
+        // Swipe right
+        this.previousImage();
+      }
+    }
+
+    // Reset values inside the method
+    this.touchStartX = 0;
+    this.touchEndX = 0;
+  }
+
+  openLegalModal(event: Event) {
+    event.preventDefault();
+    this.showLegalModal = true;
+  }
+
+  closeLegalModal() {
+    this.showLegalModal = false;
+  }
+
 }
 
 interface Card {
@@ -866,7 +954,6 @@ interface Card {
   description: string;
   image: string;
   detailedInfo: string;
-  features: string[];
 }
 
 interface Testimonial {

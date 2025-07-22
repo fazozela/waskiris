@@ -32,6 +32,9 @@ import { CommonModule } from '@angular/common';
           <a routerLink="/our-impact"
              routerLinkActive="text-[#E71F69]"
              class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.impact' | translate }}</a>
+          <a routerLink="/media"
+             routerLinkActive="text-[#E71F69]"
+             class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.media' | translate }}</a>
           <a routerLink="/get-involved"
              routerLinkActive="text-[#E71F69]"
              class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.get_involved' | translate }}</a>
@@ -74,6 +77,9 @@ import { CommonModule } from '@angular/common';
           <a routerLink="/our-impact"
              routerLinkActive="text-[#E71F69]"
              class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.impact' | translate }}</a>
+          <a routerLink="/media"
+             routerLinkActive="text-[#E71F69]"
+             class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.media' | translate }}</a>
           <a routerLink="/get-involved"
              routerLinkActive="text-[#E71F69]"
              class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.get_involved' | translate }}</a>

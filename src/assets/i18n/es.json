@@ -9,7 +9,8 @@
     "get_involved": "Únete",
     "contact": "Contacto",
     "mentorStem": "Mentoria STEM",
-    "impact": "Impacto"
+    "impact": "Impacto",
+    "media": "Media"
   },
   "home": {
     "home_title": "Empoderando a la próxima generación de líderes STEM en Bolivia",
@@ -73,9 +74,10 @@
     "results": "Resultados",
     "our_community": "Nuestra comunidad en números",
     "years_working": "Años trabajando",
-    "scholarships": "Becarios",
+    "scholarships": "Becarias Waskiris",
     "perception": "Cambio de percepción sobre áreas STEM",
     "projects": "Proyectos",
-    "make_donation": "Haz tu donación"
+    "make_donation": "Haz tu donación",
+    "home_see_more": "Ver más..."
   }
 }
