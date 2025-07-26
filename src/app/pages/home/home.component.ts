@@ -27,7 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
         <div #animatedElement data-animation="fadeInDown" class="flex flex-col sm:flex-row gap-4">
           <a routerLink="/our-projects" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" translate>home.programs</a>
           <a routerLink="/our-impact" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" translate>home.results</a>
-          <a routerLink="/get-involved" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" >Voluntariado</a>
+          <a routerLink="/get-involved" class="bg-white text-[#E71F69] px-8 py-3 rounded-full font-bold text-center hover:bg-pink-100 transition duration-300" translate>home.volunteering</a>
         </div>
       </div>
 
@@ -92,8 +92,8 @@ import { TranslateModule } from '@ngx-translate/core';
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Card 1 -->
             <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(231, 31, 105, 1);">
-              <div #animatedElement data-animation="fadeInDown" class="w-20 h-20 rounded-full flex items-center justify-center text-white text-5xl font-bold flex-shrink-0" style="background-color: #E71F69;">
-                +5
+              <div #animatedElement data-animation="fadeInDown" class="w-20 h-20 rounded-full flex items-center justify-center text-white text-3xl md:text-4xl lg:text-5xl font-bold flex-shrink-0" style="background-color: #E71F69;">
+                  +5
               </div>
               <div class="flex-1">
                 <h3 #animatedElement data-animation="fadeInUp" class="text-lg text-white font-semibold leading-relaxed" translate>
@@ -103,7 +103,7 @@ import { TranslateModule } from '@ngx-translate/core';
             </div>
             <!-- Card 2 -->
             <div class="rounded-3xl p-8 flex items-center gap-6 shadow-lg" style="background-color: rgba(131, 146, 187, 1);">
-              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 flex items-center justify-center text-white text-5xl font-bold flex-shrink-0" style="background-color: #8392BB;">
+              <div #animatedElement data-animation="fadeInDown" class="w-20 h-20 rounded-full flex items-center justify-center text-white text-3xl md:text-4xl lg:text-5xl font-bold flex-shrink-0" style="background-color: #8392BB;">
                 +500
               </div>
               <div class="flex-1">
@@ -114,7 +114,7 @@ import { TranslateModule } from '@ngx-translate/core';
             </div>
             <!-- Card 3 -->
             <div class="rounded-3xl p-8 flex items-center gap-6 md:col-span-2 lg:col-span-1 shadow-lg" style="background-color: rgba(235, 91, 37, 1);">
-              <div #animatedElement data-animation="fadeInDown" class="rounded-full px-6 py-4 flex items-center justify-center text-white text-5xl font-bold flex-shrink-0" style="background-color: #EB5B25;">
+              <div #animatedElement data-animation="fadeInDown" class="w-20 h-20 rounded-full flex items-center justify-center text-white text-3xl md:text-4xl lg:text-5xl font-bold flex-shrink-0" style="background-color: #EB5B25;">
                 +75%
               </div>
               <div class="flex-1">
@@ -381,63 +381,44 @@ import { TranslateModule } from '@ngx-translate/core';
       <!-- CTA -->
       <div class="text-center mt-12">
         <h3 #animatedElement data-animation="fadeInDown" class="text-3xl font-bold text-gray-800 mb-6" translate>home.WHY_CHOOSE_CTA_TITLE</h3>
-        <div #animatedElement data-animation="fadeInDown" class="flex justify-center items-center py-4">
+        <div #animatedElement data-animation="fadeInUp" class="flex justify-center items-center py-4">
           <img src="hashtag.png" alt="cohete" class="mx-auto w-xl">
         </div>
-        <a #animatedElement data-animation="fadeInUp" routerLink="/" class="inline-block bg-[#E71F69] text-white px-8 py-5 mt-6 rounded-full font-bold hover:shadow-lg" translate>home.make_donation</a>
+        <a #animatedElement data-animation="fadeInDown" routerLink="/" class="inline-block bg-[#E71F69] text-white px-8 py-5 mt-6 rounded-full font-bold hover:shadow-lg" translate>home.make_donation</a>
       </div>
     </div>
   </section>
 
 <!--  Companies section-->
-  <section class="py-16 bg-gray-900">
-    <div class="container mx-auto px-4">
+<section class="py-16 bg-gray-900">
+  <div class="container mx-auto px-4">
 
-      <!-- Nuestros aliados -->
-      <div class="mb-16">
-        <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold text-center mb-8 text-white">
-          Nuestros aliados
-        </h2>
-        <div class="relative overflow-hidden">
-          <div class="flex animate-scroll-left">
-            <div class="flex space-x-8 min-w-full">
-              <div *ngFor="let ally of allies" class="flex-shrink-0 w-30 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
-                <img [src]="ally.logo" [alt]="ally.name" class="max-w-full max-h-full object-contain p-2">
-              </div>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="flex space-x-8 min-w-full ml-4">
-              <div *ngFor="let ally of allies" class="flex-shrink-0 w-30 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
-                <img [src]="ally.logo" [alt]="ally.name" class="max-w-full max-h-full object-contain p-2">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nuestros financiadores -->
-      <div>
-        <h2 #animatedElement data-animation="fadeInDown" class="text-3xl font-bold text-center mb-8 text-white">
-          Nuestros financiadores
-        </h2>
-        <div class="relative overflow-hidden">
-          <div class="flex animate-scroll-left-slow">
-            <div class="flex space-x-8 min-w-full">
-              <div *ngFor="let funder of funders" class="flex-shrink-0 w-32 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
-                <img [src]="funder.logo" [alt]="funder.name" class="max-w-full max-h-full object-contain p-2">
-              </div>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="flex space-x-8 min-w-full">
-              <div *ngFor="let funder of funders" class="flex-shrink-0 w-32 h-20 bg-white rounded-lg shadow-md flex items-center justify-center">
-                <img [src]="funder.logo" [alt]="funder.name" class="max-w-full max-h-full object-contain p-2">
-              </div>
-            </div>
-          </div>
+    <!-- Nuestros aliados -->
+    <div class="mb-16">
+      <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold text-center mb-8 text-white" translate>
+        home.allies
+      </h2>
+      <div #alliesScroller class="flex gap-6 overflow-x-auto scrollbar-hide py-2 justify-center">
+        <div *ngFor="let ally of allies" class="flex-shrink-0 w-28 h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
+          <img [src]="ally.logo" [alt]="ally.name" class="max-h-12 max-w-full object-contain p-2">
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Nuestros financiadores -->
+    <div>
+      <h2 #animatedElement data-animation="fadeInDown" class="text-3xl font-bold text-center mb-8 text-white" translate>
+        home.sponsors
+      </h2>
+      <div #fundersScroller class="flex gap-6 overflow-x-auto scrollbar-hide py-2 justify-center">
+        <div *ngFor="let funder of funders" class="flex-shrink-0 w-28 h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
+          <img [src]="funder.logo" [alt]="funder.name" class="max-h-12 max-w-full object-contain p-2">
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
 
 <!--  Media-->
   <section class="py-16 bg-white">
@@ -452,7 +433,7 @@ import { TranslateModule } from '@ngx-translate/core';
       </div>
 
       <div class="flex justify-center">
-        <a #animatedElement data-animation="fadeInUp" routerLink="/media" class="inline-block bg-[#E71F69] text-white px-8 py-5 mt-6 rounded-full font-bold hover:shadow-lg">Ir a Media</a>
+        <a #animatedElement data-animation="fadeInUp" routerLink="/media" class="inline-block bg-[#E71F69] text-white px-8 py-5 mt-6 rounded-full font-bold hover:shadow-lg" translate>home.go_to_media</a>
       </div>
     </div>
   </section>
@@ -461,9 +442,9 @@ import { TranslateModule } from '@ngx-translate/core';
   <section class="bg-gray-900 text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold mb-4">Contáctanos</h2>
-        <p #animatedElement data-animation="fadeInUp" class="text-gray-300 text-lg max-w-2xl mx-auto">
-          Estamos aquí para ayudarte. Ponte en contacto con nosotros a través de cualquiera de nuestros canales.
+        <h2 #animatedElement data-animation="fadeInUp" class="text-3xl font-bold mb-4" translate>home.contact_us</h2>
+        <p #animatedElement data-animation="fadeInUp" class="text-gray-300 text-lg max-w-2xl mx-auto" translate>
+          home.here_to_help
         </p>
       </div>
 
@@ -471,7 +452,7 @@ import { TranslateModule } from '@ngx-translate/core';
         <!-- Contact Information -->
         <div class="space-y-8">
           <div>
-            <h3 #animatedElement data-animation="fadeInDown" class="text-xl font-semibold mb-4">Información de Contacto</h3>
+            <h3 #animatedElement data-animation="fadeInDown" class="text-xl font-semibold mb-4" translate>home.contact_info</h3>
             <div #animatedElement data-animation="fadeInDown" class="flex justify-center">
               <div class="flex items-center space-x-3">
                 <svg class="w-5 h-5 text-blue-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -486,7 +467,7 @@ import { TranslateModule } from '@ngx-translate/core';
           </div>
 
           <div>
-            <h3 #animatedElement data-animation="fadeInUp" class="text-xl font-semibold mb-4">Síguenos</h3>
+            <h3 #animatedElement data-animation="fadeInUp" class="text-xl font-semibold mb-4" translate>home.follow_us</h3>
             <div #animatedElement data-animation="fadeInUp" class="flex justify-center space-x-6">
               <!-- Facebook -->
               <a href="https://www.facebook.com/ChicasWaskiris" target="_blank" rel="noopener noreferrer"
@@ -527,107 +508,114 @@ import { TranslateModule } from '@ngx-translate/core';
   </section>
 
   <!-- Footer -->
+
   <footer class="bg-black text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <div class="text-center md:text-left">
-          <p #animatedElement data-animation="fadeInUp" class="text-gray-400">&copy; 2025 Chicas Waskiris. Todos los derechos reservados.</p>
-        </div>
-        <div class="flex space-x-6 text-sm">
-          <a #animatedElement data-animation="fadeInUp" href="#" (click)="openLegalModal($event)" class="text-gray-400 hover:text-white transition-colors">
-            Política de Privacidad & Términos y Condiciones
-          </a>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div class="text-center md:text-left">
+            <p #animatedElement data-animation="fadeInUp" class="text-gray-400" translate><span>&copy; </span>{{ 'home.all_rights' | translate }}</p>
+          </div>
+          <div class="flex space-x-6 text-sm">
+            <a #animatedElement data-animation="fadeInUp" href="#" (click)="openLegalModal($event)" class="text-gray-400 hover:text-white transition-colors" translate>
+              {{ 'home.privacy_terms' | translate }}
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div
-      *ngIf="showLegalModal"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
-      (click)="closeLegalModal()"
-    >
       <div
-        class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative"
-        (click)="$event.stopPropagation()"
+        *ngIf="showLegalModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+        (click)="closeLegalModal()"
       >
-        <button
-          (click)="closeLegalModal()"
-          class="absolute top-4 right-4 text-gray-500 hover:text-[#E71F69] text-2xl font-bold"
-          aria-label="Cerrar"
-        >&times;</button>
-        <h2 class="text-2xl font-bold mb-4 text-[#E71F69]">TÉRMINOS DE USO</h2>
-        <p class="text-xs text-gray-500 mb-2">Última actualización: 30 de julio de 2025</p>
-        <p class="mb-4 text-gray-500">Bienvenido/a a la página web de Chicas Waskiris (“la Web”, “nosotros”, “nuestro/a”). Al acceder o utilizar este sitio web, acepta cumplir los siguientes términos de uso. Si no está de acuerdo con estos términos, por favor, no utilice este sitio.</p>
-        <ol class="list-decimal pl-5 mb-4 space-y-2 text-sm text-gray-500">
-          <li>
-            <strong>Contenido y titularidad</strong><br>
-            El contenido de este sitio web, incluyendo pero no limitado a fotos, videos, texto, manuales, guías y demás material, es propiedad de Chicas Waskiris o se utiliza bajo autorización expresa conforme a la normativa vigente.<br>
-            El sitio puede mostrar imágenes o videos de menores de edad exclusivamente con los debidos permisos gestionados por Chicas Waskiris. No está permitido descargar, distribuir, compartir fuera de la web, reproducir o modificar este material sin consentimiento expreso por escrito de Chicas Waskiris.
-          </li>
-          <li>
-            <strong>Uso del material de autoría de Chicas Waskiris</strong><br>
-            Se permite la descarga gratuita de manuales, guías y otros recursos digitales del sitio, siempre y cuando:<br>
-            En toda reutilización, publicación, diseminación, adaptación o referencia pública se cite de manera adecuada la autoría de Chicas Waskiris y se reconozca la propiedad intelectual mediante mención visible a “Chicas Waskiris, Bolivia” y el enlace al sitio web.<br>
-            No se realiza ningún uso comercial, salvo acuerdo escrito con Chicas Waskiris.<br>
-            No se modifica el contenido original de modo que distorsione su significado o propósito.
-          </li>
-          <li>
-            <strong>Uso indebido</strong><br>
-            No podrá usar este sitio web para fines ilícitos, fraudulentos, difamatorios, abusivos, obscenos o dañinos, ni interferir en su correcto funcionamiento.
-          </li>
-          <li>
-            <strong>Protección de los derechos de menores</strong><br>
-            Queda estrictamente prohibido descargar, compartir, reproducir o redistribuir imágenes o videos de menores de edad publicados en este sitio para cualquiera de los fines no autorizados por Chicas Waskiris. Toda fotografía y video dentro de la Web cuenta con los permisos pertinentes; cualquier uso por terceros está estrictamente prohibido.
-          </li>
-          <li>
-            <strong>Modificaciones y disponibilidad</strong><br>
-            Chicas Waskiris se reserva el derecho de modificar estos términos en cualquier momento y sin previo aviso. El uso continuado de la Web implica la aceptación de los términos modificados.
-          </li>
-        </ol>
-        <h2 class="text-2xl font-bold mb-4 text-[#E71F69] mt-8">POLÍTICA DE PRIVACIDAD</h2>
-        <p class="text-xs text-gray-500 mb-2">Última actualización: 30 de julio de 2025</p>
-        <ol class="list-decimal pl-5 mb-4 space-y-2 text-sm text-gray-500">
-          <li>
-            <strong>No utilizamos cookies</strong><br>
-            Nuestra web NO utiliza cookies para rastrear, almacenar información personal ni ningún otro propósito.
-          </li>
-          <li>
-            <strong>Información recopilada</strong><br>
-            No recopilamos información personal de los visitantes de la Web de manera automática.<br>
-            Solo recibimos información personal si usted nos la proporciona voluntariamente a través de formularios de contacto, correo electrónico u otro medio similar.<br>
-            En ese caso, la información proporcionada se utilizará únicamente para responder consultas directas y no será compartida con terceros sin su consentimiento previo, salvo requerimiento legal.
-          </li>
-          <li>
-            <strong>Protección de menores</strong><br>
-            El sitio publica imágenes y videos de menores con los permisos y autorizaciones legales requeridos. No se recopila información personal de menores visitantes ni se solicita ningún tipo de registro.
-          </li>
-          <li>
-            <strong>Enlaces a terceros</strong><br>
-            Esta web puede contener enlaces a sitios web de terceros. No nos responsabilizamos de las prácticas de privacidad ni del contenido de dichas webs externas.
-          </li>
-          <li>
-            <strong>Derechos de Propiedad Intelectual</strong><br>
-            Todo material original ofrecido para descarga (manuales, guías y otros recursos) es propiedad intelectual de Chicas Waskiris.<br>
-            Su reutilización debe siempre reconocer la autoría de Chicas Waskiris y no está permitida para fines comerciales salvo autorización expresa.
-          </li>
-          <li>
-            <strong>Cambios a la política</strong><br>
-            Chicas Waskiris puede modificar esta política de privacidad cuando lo considere necesario. Cualquier cambio será publicado en esta página.
-          </li>
-          <li>
-            <strong>Contacto</strong><br>
-            Para cualquier consulta respecto a estos Términos de uso o la Política de privacidad puede escribirnos a: <a href="mailto:chicaswaskiris@gmail.com" class="text-[#E71F69] underline">chicaswaskiris&#64;gmail.com</a>
-          </li>
-        </ol>
-      </div>
-    </div>
+        <div
+          class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative"
+          (click)="$event.stopPropagation()"
+        >
+          <button
+            (click)="closeLegalModal()"
+            class="absolute top-4 right-4 text-gray-500 hover:text-[#E71F69] text-2xl font-bold"
+            aria-label="Cerrar"
+          >&times;</button>
 
-  </footer>
+          <h2 class="text-2xl font-bold mb-4 text-[#E71F69]">{{ 'home.terms_title' | translate }}</h2>
+          <p class="text-xs text-gray-500 mb-2">{{ 'home.terms_last_updated' | translate }}</p>
+          <p class="mb-4 text-gray-500">{{ 'home.terms_welcome' | translate }}</p>
+
+          <ol class="list-decimal pl-5 mb-4 space-y-2 text-sm text-gray-500">
+            <li>
+              <strong>{{ 'home.terms_content_ownership' | translate }}</strong><br>
+              {{ 'home.terms_content_text' | translate }}<br>
+              {{ 'home.terms_minors_content' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.terms_use_materials' | translate }}</strong><br>
+              {{ 'home.terms_use_materials_text' | translate }}<br>
+              {{ 'home.terms_citation_required' | translate }}<br>
+              {{ 'home.terms_no_commercial' | translate }}<br>
+              {{ 'home.terms_no_modification' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.terms_improper_use' | translate }}</strong><br>
+              {{ 'home.terms_improper_use_text' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.terms_minors_protection' | translate }}</strong><br>
+              {{ 'home.terms_minors_protection_text' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.terms_modifications' | translate }}</strong><br>
+              {{ 'home.terms_modifications_text' | translate }}
+            </li>
+          </ol>
+
+          <h2 class="text-2xl font-bold mb-4 text-[#E71F69] mt-8">{{ 'home.privacy_title' | translate }}</h2>
+          <p class="text-xs text-gray-500 mb-2">{{ 'home.privacy_last_updated' | translate }}</p>
+
+          <ol class="list-decimal pl-5 mb-4 space-y-2 text-sm text-gray-500">
+            <li>
+              <strong>{{ 'home.privacy_no_cookies' | translate }}</strong><br>
+              {{ 'home.privacy_no_cookies_text' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.privacy_info_collected' | translate }}</strong><br>
+              {{ 'home.privacy_no_auto_collect' | translate }}<br>
+              {{ 'home.privacy_voluntary_info' | translate }}<br>
+              {{ 'home.privacy_info_use' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.privacy_minors_protection' | translate }}</strong><br>
+              {{ 'home.privacy_minors_text' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.privacy_third_party' | translate }}</strong><br>
+              {{ 'home.privacy_third_party_text' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.privacy_intellectual_rights' | translate }}</strong><br>
+              {{ 'home.privacy_intellectual_text' | translate }}<br>
+              {{ 'home.privacy_reuse_conditions' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.privacy_policy_changes' | translate }}</strong><br>
+              {{ 'home.privacy_policy_changes_text' | translate }}
+            </li>
+            <li>
+              <strong>{{ 'home.privacy_contact' | translate }}</strong><br>
+              {{ 'home.privacy_contact_text' | translate }} <a href="mailto:chicaswaskiris@gmail.com" class="text-[#E71F69] underline">chicaswaskiris&#64;gmail.com</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+    </footer>
   `
 })
 
 export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChildren('animatedElement') animatedElements!: QueryList<ElementRef>;
+  @ViewChildren('alliesScroller') alliesScroller!: QueryList<ElementRef>;
+  @ViewChildren('fundersScroller') fundersScroller!: QueryList<ElementRef>;
 
   selectedCard: Card | null = null;
   currentIndex = 0;
@@ -636,6 +624,9 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   touchStartX = 0;
   touchEndX = 0;
   showLegalModal = false;
+
+  private alliesScrollInterval: any;
+  private fundersScrollInterval: any;
 
   cardsData: Card[] = [
     {
@@ -774,6 +765,22 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       name: 'Women WIN',
       logo: 'allies/woman-win.png'
+    },
+    {
+      name: 'Chevening',
+      logo: 'allies/chevening.jpeg'
+    },
+    {
+      name: 'Giz',
+      logo: 'allies/giz.jpg'
+    },
+    {
+      name: 'FREE FUND STEM',
+      logo: 'allies/free.jpeg'
+    },
+    {
+      name: 'Women WIN',
+      logo: 'allies/woman-win.png'
     }
   ];
 
@@ -822,12 +829,13 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     this.setupScrollAnimations();
+    setTimeout(() => this.startLogoAutoScroll(), 500); // Wait for view to render
   }
 
   ngOnDestroy() {
-    if (this.autoSlideInterval) {
-      clearInterval(this.autoSlideInterval);
-    }
+    if (this.autoSlideInterval) clearInterval(this.autoSlideInterval);
+    if (this.alliesScrollInterval) clearInterval(this.alliesScrollInterval);
+    if (this.fundersScrollInterval) clearInterval(this.fundersScrollInterval);
   }
 
   startAutoSlide() {
@@ -944,6 +952,30 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   closeLegalModal() {
     this.showLegalModal = false;
+  }
+
+  startLogoAutoScroll() {
+    // Allies
+    const alliesDiv = this.alliesScroller.first?.nativeElement;
+    if (alliesDiv) {
+      this.alliesScrollInterval = setInterval(() => {
+        alliesDiv.scrollLeft += 1;
+        // Reset if at end
+        if (alliesDiv.scrollLeft + alliesDiv.clientWidth >= alliesDiv.scrollWidth - 1) {
+          alliesDiv.scrollLeft = 0;
+        }
+      }, 30);
+    }
+    // Funders
+    const fundersDiv = this.fundersScroller.first?.nativeElement;
+    if (fundersDiv) {
+      this.fundersScrollInterval = setInterval(() => {
+        fundersDiv.scrollLeft += 2;
+        if (fundersDiv.scrollLeft + fundersDiv.clientWidth >= fundersDiv.scrollWidth - 2) {
+          fundersDiv.scrollLeft = 0;
+        }
+      }, 30);
+    }
   }
 
 }
