@@ -44,8 +44,10 @@ export class LanguageSelectorComponent {
   currentLanguage = 'es';
 
   constructor() {
-    this.translate.setDefaultLang('es');
-    this.translate.use('es');
+    const savedLang = localStorage.getItem('lang');
+    this.currentLanguage = savedLang || 'es';
+    this.translate.setDefaultLang(this.currentLanguage);
+    this.translate.use(this.currentLanguage);
   }
 
   toggleLanguageDropdown() {
@@ -55,6 +57,7 @@ export class LanguageSelectorComponent {
   changeLanguage(language: string) {
     this.currentLanguage = language;
     this.translate.use(language);
+    localStorage.setItem('lang', language);
     this.isLanguageDropdownOpen = false;
   }
 }
