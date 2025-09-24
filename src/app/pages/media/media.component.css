@@ -1,0 +1,202 @@
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Initial state for animated elements */
+[data-animation] {
+  opacity: 0;
+}
+
+/* Publication card enhancements */
+.publication-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+}
+
+.publication-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.publication-card:hover::before {
+  left: 100%;
+}
+
+/* Download button hover effects */
+.download-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.3s;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+/* Video responsiveness */
+video {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  border-radius: 1rem;
+}
+
+/* Ensure video containers maintain aspect ratio */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Publication image hover effects */
+.publication-image {
+  transition: transform 0.3s ease;
+}
+
+.publication-card:hover .publication-image {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+
+  /* Stack publication cards on tablet */
+  .publication-card {
+    flex-direction: column !important;
+  }
+
+  .publication-card>div {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Adjust video height on mobile */
+  video {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Responsive iframe container */
+  .video-container {
+    padding-bottom: 60%;
+    /* Slightly taller on mobile */
+  }
+
+  /* Reduce padding on mobile */
+  .publication-card .p-8,
+  .publication-card .p-12 {
+    padding: 1.5rem !important;
+  }
+
+  /* Stack download button and info on mobile */
+  .publication-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+
+  /* Further reduce padding on small mobile */
+  .publication-card {
+    margin-bottom: 2rem;
+  }
+
+  /* Make buttons full width on mobile */
+  .download-btn {
+    width: 100%;
+  }
+}

@@ -1,3 +1,191 @@
 :host {
   display: block;
 }
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-countUp {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* Initial state for animated elements */
+[data-animation] {
+  opacity: 0;
+}
+
+/* Statistics card enhancements */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.stat-card:hover::before {
+  left: 100%;
+}
+
+/* Video responsiveness */
+video {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  border-radius: 1rem;
+}
+
+/* Ensure video containers maintain aspect ratio */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Number animation effect */
+.impact-number {
+  background: linear-gradient(45deg, currentColor, transparent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+  /* Adjust video height on mobile */
+  video {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Responsive iframe container */
+  .video-container {
+    padding-bottom: 60%;
+    /* Slightly taller on mobile */
+  }
+
+  /* Stack statistics cards better on mobile */
+  .stat-card {
+    margin-bottom: 1rem;
+  }
+
+  /* Reduce text sizes on mobile */
+  .impact-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-number {
+    font-size: 2rem;
+  }
+}

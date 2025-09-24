@@ -45,7 +45,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <div class="w-full flex-shrink-0">
                 <img #animatedElement
                      data-animation="fadeInRight"
-                     class="bg-white w-full h-[300px] md:h-[400px] object-contain"
+                     class="bg-white w-full h-[300px] md:h-[400px] object-fill"
                      src="waskirisLogo.png"
                      alt="logo">
               </div>
@@ -153,6 +153,9 @@ import { TranslateModule } from '@ngx-translate/core';
               <h3 #animatedElement data-animation="fadeInUp" class="text-xl font-bold mb-2" style="color: #E71F69;">
                 {{ card.title }}
               </h3>
+              <h5 #animatedElement data-animation="fadeInUp" class="text-md font-medium mb-2" style="color: #4F668C;">
+                {{ card.date }}
+              </h5>
               <p #animatedElement data-animation="fadeInDown" class="text-gray-600 leading-relaxed">
                 {{ card.description }}
               </p>
@@ -400,7 +403,7 @@ import { TranslateModule } from '@ngx-translate/core';
       </h2>
       <div #alliesScroller class="flex gap-6 overflow-x-auto scrollbar-hide py-2 justify-center">
         <div *ngFor="let ally of allies" class="flex-shrink-0 w-28 h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-          <img [src]="ally.logo" [alt]="ally.name" class="max-h-12 max-w-full object-contain p-2">
+          <img [src]="ally.logo" [alt]="ally.name" class="max-h-18 max-w-full object-contain p-2">
         </div>
       </div>
     </div>
@@ -412,7 +415,7 @@ import { TranslateModule } from '@ngx-translate/core';
       </h2>
       <div #fundersScroller class="flex gap-6 overflow-x-auto scrollbar-hide py-2 justify-center">
         <div *ngFor="let funder of funders" class="flex-shrink-0 w-28 h-16 bg-white rounded-lg shadow-md flex items-center justify-center">
-          <img [src]="funder.logo" [alt]="funder.name" class="max-h-12 max-w-full object-contain p-2">
+          <img [src]="funder.logo" [alt]="funder.name" class="max-h-18 max-w-full object-contain p-2">
         </div>
       </div>
     </div>
@@ -632,6 +635,7 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 1,
       title: "STEM EN TUS MANOS",
+      date: "2025",
       description: "Promover la inclusión de adolescentes sordos en la educación STEM.",
       image: "stem.png",
       detailedInfo: "Promover la inclusión de adolescentes sordos en la educación STEM, adaptando materiales educativos y talleres a la Lengua de Señas Boliviana (LSB) y generando experiencias accesibles y transformadoras."
@@ -639,6 +643,7 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 2,
       title: "IMPULSA STEM",
+      date: "2023",
       description: "Motivar a adolescentes de municipios y/o ciudades alejadas de la ciudad de La Paz.",
       image: "cohete.png",
       detailedInfo: "Motivar a adolescentes de municipios y/o ciudades alejadas de la ciudad de La Paz a optar por carreras STEM, reduciendo la brecha de género y generando oportunidades desde sus propias comunidades."
@@ -646,6 +651,7 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 3,
       title: "Juntucha waskiri",
+      date: "2021",
       description: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial.",
       image: "juntucha1.png",
       detailedInfo: "Sumérgete en el mundo de la inteligencia artificial y descubre cómo esta tecnología está transformando nuestra sociedad. Nuestro programa cubre desde conceptos básicos hasta aplicaciones avanzadas, incluyendo machine learning, procesamiento de lenguaje natural y visión por computadora, todo explicado de manera accesible y práctica."
@@ -653,6 +659,7 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 4,
       title: "Juntucha Waskiri 2.0",
+      date: "2022",
       description: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial.",
       image: "juntucha2.png",
       detailedInfo: "Sumérgete en el mundo de la inteligencia artificial y descubre cómo esta tecnología está transformando nuestra sociedad. Nuestro programa cubre desde conceptos básicos hasta aplicaciones avanzadas, incluyendo machine learning, procesamiento de lenguaje natural y visión por computadora, todo explicado de manera accesible y práctica."
@@ -660,8 +667,17 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 5,
       title: "Primer Campamento STEM de Chicas Waskiris",
+      date: "2019",
       description: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial.",
       image: "primer-campamento.jpeg",
+      detailedInfo: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial en ciencia, tecnología, ingeniería y matemáticas."
+    },
+    {
+      id: 6,
+      title: "Mentoras y Aprendices Waskiris",
+      date: "2024",
+      description: "Fortalecer el liderazgo y las habilidades STEM de adolescentes a través de una red de mentoría entre mujeres jóvenes y niñas interesadas en ciencia y tecnología.",
+      image: "mentoras-y-aprendices.png",
       detailedInfo: "Brindar a adolescentes bolivianas una experiencia práctica y vivencial en ciencia, tecnología, ingeniería y matemáticas."
     }
   ];
@@ -669,47 +685,38 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "CEO",
-      company: "TechStart Inc.",
-      testimonial: "Working with this team has been absolutely transformative for our business. Their attention to detail and innovative approach exceeded all our expectations. The results speak for themselves.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b9c8e6c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      name: "Nelzon Ever Parihuancollo Q.",
+      role: "Director",
+      company: "U.E.E. Julia Jimenez de Gutierrez",
+      testimonial: "La experiencia con Chicas Waskiris fue muy productiva y significativa… los experimentos en Biología y Física tuvieron gran impacto en nuestros estudiantes sordos, quienes aún recuerdan esa bonita vivencia y aplican lo aprendido en su formación.",
+      avatar: "nelzon.jpg",
       rating: 5
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "CTO",
-      company: "InnovateLab",
-      testimonial: "The level of professionalism and expertise demonstrated throughout our project was remarkable. They delivered exactly what we needed, on time and within budget. Highly recommended!",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      name: "Paola Cordero",
+      role: "Directora",
+      company: "Centro de Apoyo para la inclusión Effetá",
+      testimonial: "La experiencia con Chicas Waskiris fue muy valiosa… se acercaron con humildad, aprendieron nuestra cultura en lengua de señas y trabajaron en equipo, despertando en nuestros estudiantes sordos la curiosidad y el deseo de soñar en grande con la ciencia.",
+      avatar: "paola.jpg",
       rating: 5
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      role: "Marketing Director",
-      company: "Creative Solutions",
-      testimonial: "From concept to execution, every step of the process was handled with such care and precision. The team's creativity and technical skills are unmatched. Our ROI has increased by 300%!",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      name: "Cecilia Reyes",
+      role: "Ex becaria, facilitadora y voluntaria",
+      company: "Chicas Waskiris",
+      testimonial: "Ser becaria en Chicas Waskiris me ayudó a descubrir mi carrera y fortalecer habilidades. Como facilitadora, encontré mi pasión por la educación en ciencia. Ser voluntaria me acercó a diversas comunidades, enseñándome a compartir y aprender. Este espacio seguro y enriquecedor, lleno de mujeres inspiradoras, transformó mi visión personal y profesional, motivándome a soñar y trabajar por un futuro mejor.",
+      avatar: "",
       rating: 5
     },
     {
       id: 4,
-      name: "David Thompson",
-      role: "Founder",
-      company: "GrowthCorp",
-      testimonial: "I've worked with many agencies over the years, but none have delivered the quality and service we received here. The team truly understands what it takes to build something exceptional.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      rating: 5
-    },
-    {
-      id: 5,
-      name: "Lisa Park",
-      role: "Product Manager",
-      company: "NextGen Apps",
-      testimonial: "The collaboration was seamless and the final product exceeded our wildest expectations. Their innovative approach and commitment to excellence is truly inspiring. We couldn't be happier!",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      name: "Milena Reyes",
+      role: "Ex becaria. Fundadora",
+      company: "STEAM Stars",
+      testimonial: "Formé parte del campamento virtual Chicas Waskiris Juntucha 2.0, que despertó mi pasión por STEM, especialmente en el taller de microscopía. Esta experiencia me inspiró a fundar STEAM Stars y lanzar el programa Biotech Kay. Gracias a Chicas Waskiris y sus mentorías, hoy estudio en la Universidad de Pensilvania, motivada a liderar con propósito.",
+      avatar: "milena.jpg",
       rating: 5
     }
   ];
@@ -724,8 +731,24 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       logo: 'allies/juntuchawaskiri1.png'
     },
     {
-      name: 'STEAM Stars',
+      name: 'Waskiris 2019',
       logo: 'allies/waskiris-2019.jpeg'
+    },
+    {
+      name: 'Stem stars',
+      logo: 'allies/stem-stars.png'
+    },
+    {
+      name: 'Spark Minds',
+      logo: 'allies/spark-minds.png'
+    },
+    {
+      name: 'Gusta Ciencia',
+      logo: 'allies/gusta-ciencia.png'
+    },
+    {
+      name: 'Suma',
+      logo: 'allies/suma.png'
     },
     {
       name: 'Nos Gusta la Ciencia',
@@ -760,7 +783,7 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     },
     {
       name: 'FREE FUND STEM',
-      logo: 'allies/free.jpeg'
+      logo: 'allies/free-stem-fund.png'
     },
     {
       name: 'Women WIN',
@@ -769,18 +792,6 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       name: 'Chevening',
       logo: 'allies/chevening.jpeg'
-    },
-    {
-      name: 'Giz',
-      logo: 'allies/giz.jpg'
-    },
-    {
-      name: 'FREE FUND STEM',
-      logo: 'allies/free.jpeg'
-    },
-    {
-      name: 'Women WIN',
-      logo: 'allies/woman-win.png'
     }
   ];
 
@@ -983,6 +994,7 @@ export default class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 interface Card {
   id: number;
   title: string;
+  date: string;
   description: string;
   image: string;
   detailedInfo: string;
