@@ -60,13 +60,18 @@ import { TranslateModule } from '@ngx-translate/core';
   <!-- Quiénes Somos Section -->
   <section id="quienes" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 #animatedElement data-animation="fadeInUp" class="text-4xl md:text-5xl font-bold text-[#012633] mb-8">¿Quiénes somos?</h2>
-        <div #animatedElement data-animation="fadeInUp" class="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+      <h2 #animatedElement data-animation="fadeInUp" class="text-4xl md:text-5xl font-bold text-[#012633] mb-12 text-center">¿Quiénes somos?</h2>
+      <div #animatedElement data-animation="fadeInUp" class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 items-center">
+        <!-- Text Content - 3/4 width -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg order-2 md:order-1 md:col-span-3">
           <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
             DigitalMente Libres es una iniciativa enfocada en informar y sensibilizar a adolescentes, jóvenes y familias sobre los riesgos del entorno digital. 
             Creemos en la prevención como la herramienta más poderosa, y en el cuidado digital desde el hogar como la base para construir espacios seguros en internet.
           </p>
+        </div>
+        <!-- Image - 1/4 width -->
+        <div class="flex justify-center items-center order-1 md:order-2 md:col-span-1">
+          <img src="digilogo.png" alt="DigitalMente Libres Logo" class="h-32 md:h-40 w-auto drop-shadow-lg">
         </div>
       </div>
     </div>
