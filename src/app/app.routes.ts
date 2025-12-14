@@ -30,6 +30,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/donate-now/donate-now.component')
   },
   {
+    path: 'digifree',
+    loadComponent: () => import('./pages/digifree/digifree')
+  },
+  {
     path: 'contact',
     loadComponent: () => import('./pages/contact/contact.component')
   },

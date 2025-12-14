@@ -38,13 +38,18 @@ import { CommonModule } from '@angular/common';
           <a routerLink="/get-involved"
              routerLinkActive="text-[#E71F69]"
              class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.get_involved' | translate }}</a>
-          <a routerLink="/"
+          <!-- <a routerLink="/"
              routerLinkActive="text-[#E71F69]"
              class="bg-[#4F668C] text-white px-6 py-2 rounded-full hover:bg-[#8392BB] transition duration-300 font-medium cursor-not-allowed flex items-center gap-2 justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 17a2 2 0 002-2v-2a2 2 0 00-4 0v2a2 2 0 002 2zm6-6V9a6 6 0 10-12 0v2a2 2 0 00-2 2v7a2 2 0 002 2h12a2 2 0 002-2v-7a2 2 0 00-2-2z" />
             </svg>
             {{ 'nav.mentorStem' | translate }}
+          </a> -->
+          <a routerLink="/digifree"
+             routerLinkActive="text-[#E71F69]"
+             class="bg-[#E71F69] text-white px-6 py-2 rounded-full hover:bg-[#d11b5e] transition duration-300 font-medium flex items-center gap-2 justify-center">
+            Digitalmente Libre
           </a>
 
           <!-- Selector de idiomas -->
@@ -85,13 +90,14 @@ import { CommonModule } from '@angular/common';
              class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.get_involved' | translate }}</a>
           <a routerLink="/"
              routerLinkActive="text-[#E71F69]"
-             class="bg-[#4F668C] text-white px-6 py-2 rounded-full hover:bg-[#8392BB] transition duration-300 font-medium text-center cursor-not-allowed flex items-center gap-2 justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 17a2 2 0 002-2v-2a2 2 0 00-4 0v2a2 2 0 002 2zm6-6V9a6 6 0 10-12 0v2a2 2 0 00-2 2v7a2 2 0 002 2h12a2 2 0 002-2v-7a2 2 0 00-2-2z" />
-            </svg>
-            {{ 'nav.mentorStem' | translate }}
+             class="bg-[#E71F69] text-white px-6 py-2 rounded-full hover:bg-[#d11b5e] transition duration-300 font-medium text-center flex items-center gap-2 justify-center">
+            Digitalmente Libre
           </a>
-
+          <!-- <a routerLink="/digifree"
+             routerLinkActive="text-[#E71F69]"
+             class="bg-[#4F668C] text-white px-6 py-2 rounded-full hover:bg-[#8392BB] transition duration-300 font-medium text-center cursor-not-allowed flex items-center gap-2 justify-center">
+            {{ 'nav.mentorStem' | translate }}
+          </a> -->
           <div class="pt-2">
             <app-language-selector></app-language-selector>
           </div>
