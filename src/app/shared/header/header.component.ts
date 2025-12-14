@@ -88,7 +88,7 @@ import { CommonModule } from '@angular/common';
           <a routerLink="/get-involved"
              routerLinkActive="text-[#E71F69]"
              class="text-[#4D4C46] hover:text-[#E71F69] font-medium">{{ 'nav.get_involved' | translate }}</a>
-          <a routerLink="/"
+          <a routerLink="/digifree"
              routerLinkActive="text-[#E71F69]"
              class="bg-[#E71F69] text-white px-6 py-2 rounded-full hover:bg-[#d11b5e] transition duration-300 font-medium text-center flex items-center gap-2 justify-center">
             Digitalmente Libre
